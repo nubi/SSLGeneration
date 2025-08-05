@@ -88,7 +88,7 @@ class SSLCertificateGenerator:
 
 	def _write_pfx_to_file(self, pkcs12, filepath, passphrase=None):
 		pkcs12_file=open(filepath, 'wb')
-		pkcs12_file.write(pkcs12.export( passphrase ))
+		pkcs12_file.write(pkcs12.export( passphrase.encode('utf-8') ))
 		pkcs12_file.close()
 
 	def _write_crl_to_file(self, crl, ca_cert, ca_key, filepath):
@@ -403,3 +403,4 @@ if __name__ == '__main__':
 	else:
 		print("Error: Certificate type must be specified using [--ca|--server|--client|--pfx]")
 		exit(1)
+
