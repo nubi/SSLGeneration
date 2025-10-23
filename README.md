@@ -2,6 +2,7 @@
 
 1. Python
 2. The pyopenssl library.
+3. Update untuk diri sendiri.
 
 ```
 pip install -r requirements.txt
